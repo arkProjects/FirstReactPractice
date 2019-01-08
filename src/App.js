@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react'
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <p>
-//               Hi Ayush, You are here.
-//           </p>
-//
-//
-//         </header>
-//       </div>
-//     );
-//   }
-// }
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            count: 0
+        }
+        this.addHandle = this.addHandle.bind(this)
+    }
 
-function Sum() {
-  return(
+    addHandle(id) {
+        this.setState(prev => {
+                return {
+                    count: id ? prev.count + 1 : prev.count - 1
+                }
+            }
+        )
+    }
 
-      <div className="App">
-        <header className="App-header">
-               5
-        </header>
-      </div>
-
-  )
+    render() {
+        return (
+            <div>
+                <h1>Hi, You Count is {this.state.count}</h1>
+                <button onClick={() => this.addHandle(true)}> Add</button>
+                <button onClick={() => this.addHandle(false)}> Subtract</button>
+            </div>
+        )
+    }
 }
-export default Sum;
-// export default App;
+
+export default App;

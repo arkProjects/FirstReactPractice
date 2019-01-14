@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Count from "./Count";
+import LoginToggle from "./LoginToggle";
+import ApiCalls from "./Api";
 
 ReactDOM.render(
     <div>
-        <App/>
-        <Count/>
+        {/*<App/>*/}
+        {/*<Count/>*/}
+        {/*<LoginToggle/>*/}
+        <ApiCalls/>
     </div>
     , document.getElementById('root'));
 
